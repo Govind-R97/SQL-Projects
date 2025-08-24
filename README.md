@@ -118,16 +118,10 @@ WHERE total_sale > 1000
 
 6. **Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category.**:
 ```sql
-SELECT 
-    category,
-    gender,
-    COUNT(*) as total_trans
+SELECT category, gender, COUNT(transactions_id) AS transaction_count
 FROM retail_sales
-GROUP 
-    BY 
-    category,
-    gender
-ORDER BY 1
+GROUP BY gender, category
+ORDER BY category;
 ```
 
 7. **Write a SQL query to calculate the average sale for each month. Find out best selling month in each year**:
